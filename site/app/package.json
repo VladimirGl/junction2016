@@ -1,0 +1,44 @@
+{
+  "name": "workflow",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass source/scss/master.scss build/css/master.css",
+    "watch-css": "nodemon -w source/css -e scss --exec npm run build-css",
+    "uglify-js": "uglifyjs build/js/bundle.js -o build/js/bundle.min.js --mangle",
+    "watch-uglify": "nodemon -w build/js/bundle.js -e js --exec  npm run uglify-js",
+    "rollup": "rollup -w -c",
+    "server": "node server.js",
+    "dev": " npm run watch-css | npm run rollup",
+    "build": "cleancss -o build/css/master.min.css build/css/master.css | npm run uglify-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/idbbn/workflow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/idbbn/workflow#readme",
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.4.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babelrc-rollup": "^3.0.0",
+    "clean-css": "^3.4.18",
+    "express": "^4.14.0",
+    "express-livereload": "0.0.24",
+    "nodemon": "^1.9.2",
+    "rollup": "^0.33.0",
+    "rollup-plugin-babel": "^2.3.9",
+    "rollup-plugin-commonjs": "^3.1.0",
+    "rollup-plugin-json": "^2.0.0",
+    "rollup-plugin-node-resolve": "^1.7.1",
+    "rollup-plugin-scss": "^0.1.0",
+    "rollup-watch": "^2.4.0",
+    "uglify-js": "^2.7.0",
+    "vue-drag-and-drop": "^2.2.0"
+  },
+  "dependencies": {
+
+  }
+}
