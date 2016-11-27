@@ -1,0 +1,165 @@
+.profile{
+  background: #f3f3f3;
+  &-header{
+    background-size: cover;
+  }
+  &-heading{
+    font-weight: 300;
+    color: white;
+    padding:200px 0 50px;
+    animation: slide-in-left .75s ease;
+  }
+  &-body{
+    &-heading{
+      color: rgba(0,0,0,.54);
+      margin: 40px 0 30px;
+
+    }
+  }
+  &-avatar{
+    display: block;
+    text-align: center;
+  }
+  &-image{
+    padding-right: 20px;
+    max-width: 104px;
+  }
+  &-item{
+    padding: 16px 0;
+    font-size: 24px;
+    margin-bottom: 8px;
+    background: white;
+    animation-delay: .2s;
+    animation: slide-in-up .6s ease forwards;
+    opacity: 0;
+    &:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    &-desc{
+      font-size: 18px;
+      color: rgba(0,0,0,.54);
+        display: block;
+    }
+    &-price{
+      padding:  0 0 16px 0px;
+      display: block;
+      &-discounted{
+        text-decoration: line-through;
+      }
+      &-discount{
+        color: #FF3300;
+        display: block;
+      }
+    }
+    &-list{
+      list-style: none;
+      padding: 0;
+    }
+    &:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    &-col{
+      float: left;
+      width: 70%;
+    }
+    &-col-2{
+      float: left;
+      width: 10%;
+    }
+    &-col-3{
+      float: left;
+      width: 20%;
+    }
+    &-sizes{
+      min-width: 30%;
+      display: inline-block;
+    }
+  }/*imte*/
+}
+.sizes{
+  &-label{
+    font-size: 14px;
+    margin-bottom: 6px;
+    display:  block;
+  }
+}
+.profile-item:nth-child(2){
+  animation-delay: .4s;
+}
+.profile-item:nth-child(3){
+  animation-delay: .6s;
+}
+
+@keyframes slide-in-up {
+  0%{
+    opacity: .3;
+    transform: translateY(10%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-in-left {
+  0%{
+    opacity: .3;
+    transform: translateX(6%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@media (max-width:1000px) {
+  .profile-image{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width:600px) {
+  .profile{
+
+    &-heading{
+      padding:100px 0 30px;
+    }
+
+    &-heading{
+
+    }
+    &-image{
+      padding: 0 6px;
+      max-width: 100%;
+    }
+    &-item{
+      font-size: 18px;
+      &-price{
+        padding:  0 0 6px 0px;
+        display: block;
+      }
+      &-desc{
+        font-size: 14px;
+        color: rgba(0,0,0,.54);
+          display: block;
+      }
+      &-col{
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      &-col-2{
+        padding-left: 15px;
+        padding-right: 15px;
+            width: 25%;
+      }
+      &-col-3{
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 75%;
+      }
+    }
+  }
+}
